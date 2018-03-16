@@ -11,7 +11,13 @@
 
 
 // isLastInStock :: [Car] -> Boolean
-const isLastInStock = (cars) => {
-  const lastCar = last(cars);
-  return prop('in_stock', lastCar);
-};
+// const isLastInStock = (cars) => {
+//   const lastCar = last(cars);
+//   return prop('in_stock', lastCar);
+// };
+var trace = curry(function(tag, x) {
+  console.log(tag, x);
+  return x;
+});
+const will = trace('willA')
+const isLastInStock =  compose(prop('in_stock'), last)

@@ -5,7 +5,17 @@
 // Use the helper function `average` to refactor `averageDollarValue` as a composition.
 
 // averageDollarValue :: [Car] -> Int
-const averageDollarValue = (cars) => {
-  const dollarValues = map(c => c.dollar_value, cars);
-  return average(dollarValues);
-};
+// const averageDollarValue = (cars) => {
+//   const dollarValues = map(c => c.dollar_value, cars);
+//   return average(dollarValues);
+// };
+var trace = curry(function(tag, x) {
+  console.log(tag, x);
+  return x;
+});
+const will = trace('willB')
+
+const averageDollarValue =  compose(average, map(prop('dollar_value')))
+//   const dollarValues = map(c => c.dollar_value, cars);
+//   return average(dollarValues);
+// };
