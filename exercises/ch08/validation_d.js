@@ -1,9 +1,10 @@
 /* globals validateName, register */
 
 const validateGary = validateName(gary);
+console.log(validateGary)
 assert(
   validateGary instanceof Either && validateGary.isRight,
-  'The function `validateName` gives incorrect results.',
+  'The function `validateName` gives incorrect results.'+validateGary,
 );
 
 const validateYi = validateName(yi);

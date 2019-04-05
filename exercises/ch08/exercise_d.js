@@ -13,7 +13,14 @@
 // Remember either's two arguments must return the same type.
 
 // validateName :: User -> Either String ()
-const validateName = undefined;
+const validateName = curry(function(name) {
+  return  safeProp('name').length > 3 
+})
+var trace = curry(function(tag, x) {
+  console.log(tag, x);
+  return x;
+});
+const wm = trace('wm')
 
 // register :: User -> IO String
-const register = compose(undefined, validateUser(validateName));
+const register = compose(either(save, showWelcome), wm, validateUser(validateName), wm);

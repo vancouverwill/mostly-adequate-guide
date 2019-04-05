@@ -12,5 +12,5 @@ assert(
 assert.arrayEqual(
   initial.callees || [],
   ['safeProp', 'map'],
-  'The answer is incorrect; hint: you can compose `safeProp` with `head` in a declarative way',
+  'The answer is incorrect; hint: you can compose `safeProp` with `head` in a declarative way:'+initial.callees,
 );

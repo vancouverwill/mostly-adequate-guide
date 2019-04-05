@@ -13,4 +13,9 @@
 // Write a function that uses `checkActive` and `showWelcome` to grant access or return the error.
 
 // eitherWelcome :: User -> Either String String
-const eitherWelcome = undefined;
+var trace = curry(function(tag, x) {
+  console.log(tag, x);
+  return x;
+});
+const wm = trace('wm')
+const eitherWelcome = compose(map(showWelcome),  checkActive);
